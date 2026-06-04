@@ -156,10 +156,20 @@ function ContactPage() {
 
             <InfoItem icon={<MapPin className="h-5 w-5" />} title="Location" value="Addis Ababa, Ethiopia" />
 
-            <InfoItem icon={<Phone className="h-5 w-5" />} title="Phone" value="+251 922 111 222" href="tel:+251922111222" />
-            <InfoItem icon={<Phone className="h-5 w-5" />} title="Phone" value="+251 933 333 444" href="tel:+251933333444" />
-            <InfoItem icon={<Phone className="h-5 w-5" />} title="Phone" value="+251 933 333 444" href="tel:+251933333444" />
-
+            {/* Phone contacts */}
+            {[
+              { value: "+251 922 111 222", href: "tel:+251922111222" },
+              { value: "+251 933 333 444", href: "tel:+251933333444" },
+              { value: "+251 944 555 666", href: "tel:+251944555666" },
+            ].map((p, i) => (
+              <InfoItem
+                key={i}
+                icon={<Phone className="h-5 w-5" />}
+                title="Phone"
+                value={p.value}
+                href={p.href}
+              />
+            ))}
           </div>
         </Reveal>
       </div>
