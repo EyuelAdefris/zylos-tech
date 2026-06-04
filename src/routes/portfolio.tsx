@@ -8,12 +8,12 @@ import { projects } from "@/lib/site-data";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Zylos Tech" },
+      { title: "Projects — Zylos Tech" },
       {
         name: "description",
         content: "Selected projects: ERP, hotel and rental management systems, tourism platforms, e-commerce, and SaaS applications built by Zylos Tech.",
       },
-      { property: "og:title", content: "Portfolio — Zylos Tech" },
+      { property: "og:title", content: "Projects — Zylos Tech" },
       { property: "og:description", content: "Selected platforms we've built for clients across industries." },
       { property: "og:url", content: "/portfolio" },
     ],
@@ -41,8 +41,8 @@ function PortfolioPage() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
       <SectionHeading
-        eyebrow="Portfolio"
-        title="A track record of shipped software"
+        eyebrow="Projects"
+        title="A track record of shipped projects"
         subtitle="Hover any project to learn more about what we built and the technologies behind it."
       />
       <motion.div

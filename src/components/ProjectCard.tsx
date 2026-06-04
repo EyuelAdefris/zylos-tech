@@ -31,6 +31,11 @@ export function ProjectCard({ project }: { project: Project }) {
               {t}
             </span>
           ))}
+          <div className="mt-4 flex justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <a href={project.demoUrl ?? "#"} className="rounded-full bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary/80">
+              Live Demo
+            </a>
+          </div>
         </div>
       </div>
     </motion.article>

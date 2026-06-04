@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const BASE_URL = "";
+const BASE_URL = "https://zylos-tech.com";
 
 interface Entry {
   path: string;

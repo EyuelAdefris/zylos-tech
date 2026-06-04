@@ -49,14 +49,15 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li>hello@zylostech.com</li>
             <li>+251 911 000 000</li>
+            <li>+251 911 000 000</li>
+            <li>+251 911 000 000</li>
             <li>Addis Ababa, Ethiopia</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-border/60">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-muted-foreground sm:flex-row sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-6 text-center text-xs text-muted-foreground sm:px-6 lg:px-8">
           <p>© 2026 Zylos Tech. All rights reserved.</p>
-          <p>Crafted with precision in Addis Ababa.</p>
         </div>
       </div>
     </footer>

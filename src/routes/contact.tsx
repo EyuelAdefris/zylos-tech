@@ -88,10 +88,10 @@ function ContactPage() {
       />
 
       <div className="mt-14 grid gap-10 lg:grid-cols-5">
-        <Reveal className="lg:col-span-3">
+        <Reveal className="lg:col-span-3 h-full">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="rounded-2xl border border-border/60 bg-[image:var(--gradient-card)] p-6 sm:p-8"
+            className="rounded-2xl border border-border/60 bg-[image:var(--gradient-card)] p-6 sm:p-8 h-full flex flex-col justify-between"
           >
             {sent ? (
               <motion.div
@@ -150,20 +150,16 @@ function ContactPage() {
           </form>
         </Reveal>
 
-        <Reveal delay={0.1} className="lg:col-span-2">
-          <div className="space-y-6">
+        <Reveal delay={0.1} className="lg:col-span-2 h-full">
+          <div className="flex flex-col h-full justify-between gap-6">
             <InfoItem icon={<Mail className="h-5 w-5" />} title="Email" value="hello@zylostech.com" href="mailto:hello@zylostech.com" />
-            <InfoItem icon={<Phone className="h-5 w-5" />} title="Phone" value="+251 911 000 000" href="tel:+251911000000" />
+
             <InfoItem icon={<MapPin className="h-5 w-5" />} title="Location" value="Addis Ababa, Ethiopia" />
-            <div className="overflow-hidden rounded-2xl border border-border/60">
-              <iframe
-                title="Zylos Tech location"
-                src="https://www.google.com/maps?q=Addis+Ababa,+Ethiopia&output=embed"
-                className="h-64 w-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
+
+            <InfoItem icon={<Phone className="h-5 w-5" />} title="Phone" value="+251 922 111 222" href="tel:+251922111222" />
+            <InfoItem icon={<Phone className="h-5 w-5" />} title="Phone" value="+251 933 333 444" href="tel:+251933333444" />
+            <InfoItem icon={<Phone className="h-5 w-5" />} title="Phone" value="+251 933 333 444" href="tel:+251933333444" />
+
           </div>
         </Reveal>
       </div>

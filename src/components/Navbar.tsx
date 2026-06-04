@@ -1,21 +1,39 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X, Code2, Sun, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { to: "/", label: "Home" },
+  { to: "/portfolio", label: "Projects" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
-  { to: "/portfolio", label: "Portfolio" },
   { to: "/technologies", label: "Technologies" },
-  { to: "/why-us", label: "Why Us" },
+
   { to: "/contact", label: "Contact" },
 ] as const;
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
+
+  useEffect(() => {
+    const isLight = !document.documentElement.classList.contains("dark");
+    setTheme(isLight ? "light" : "dark");
+  }, []);
+
+  const toggleTheme = () => {
+    if (theme === "dark") {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setTheme("light");
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setTheme("dark");
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -26,11 +44,10 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "border-b border-border/60 bg-background/70 backdrop-blur-xl"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${scrolled
+        ? "border-b border-border/60 bg-background/70 backdrop-blur-xl"
+        : "bg-transparent"
+        }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2 group">
@@ -56,7 +73,14 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-4 lg:flex">
+          <button
+            onClick={toggleTheme}
+            className="rounded-full p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </button>
           <Link
             to="/contact"
             className="inline-flex items-center rounded-full bg-[image:var(--gradient-primary)] px-4 py-2 text-sm font-medium text-white shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
@@ -65,13 +89,22 @@ export function Navbar() {
           </Link>
         </div>
 
-        <button
-          aria-label="Toggle menu"
-          className="lg:hidden text-foreground"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <button
+            onClick={toggleTheme}
+            className="rounded-full p-2 text-muted-foreground transition-colors hover:text-foreground"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </button>
+          <button
+            aria-label="Toggle menu"
+            className="text-foreground"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>

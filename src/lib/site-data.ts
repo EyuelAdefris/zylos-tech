@@ -22,6 +22,9 @@ import projectRental from "@/assets/project-rental.jpg";
 import projectTourism from "@/assets/project-tourism.jpg";
 import projectEcommerce from "@/assets/project-ecommerce.jpg";
 import projectSaas from "@/assets/project-saas.jpg";
+import projectAiSupport from "@/assets/project-ai-support.jpg";
+import projectTelemedicine from "@/assets/project-telemedicine.jpg";
+import projectLogistics from "@/assets/project-logistics.jpg";
 
 export interface Service {
   icon: LucideIcon;
@@ -45,6 +48,7 @@ export interface Project {
   desc: string;
   image: string;
   tech: string[];
+  demoUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -53,36 +57,84 @@ export const projects: Project[] = [
     desc: "End-to-end resource planning for a regional manufacturer—HR, inventory, finance, and analytics in one suite.",
     image: projectErp,
     tech: ["Next.js", "NestJS", "PostgreSQL", "Docker"],
+    demoUrl: "#",
   },
   {
     title: "Hotel Management System",
     desc: "Reservations, housekeeping, billing, and channel sync for a 200-room property group.",
     image: projectHotel,
     tech: ["React", "Node.js", "MongoDB", "AWS"],
+    demoUrl: "#",
   },
   {
     title: "Rental Management Suite",
     desc: "Property listings, contracts, and tenant portals with automated payment workflows.",
     image: projectRental,
     tech: ["TypeScript", "Express", "PostgreSQL"],
+    demoUrl: "#",
   },
   {
     title: "Tourism Booking Platform",
     desc: "Multi-vendor marketplace for tours and stays, integrated with Stripe and global payments.",
     image: projectTourism,
     tech: ["Next.js", "Stripe", "Tailwind", "Vercel"],
+    demoUrl: "#",
   },
   {
     title: "E-Commerce Marketplace",
     desc: "Headless commerce platform with custom checkout, inventory, and merchant dashboard.",
     image: projectEcommerce,
     tech: ["React", "GraphQL", "MySQL", "AWS"],
+    demoUrl: "#",
   },
   {
     title: "SaaS Analytics Application",
     desc: "Real-time business intelligence dashboard with role-based access and white-label theming.",
     image: projectSaas,
     tech: ["Next.js", "NestJS", "PostgreSQL", "Docker"],
+    demoUrl: "#",
+  },
+  {
+    title: "AI-Powered Customer Support Bot",
+    desc: "Integrated AI assistant answering queries, handling order tracking, and auto-routing complex tickets.",
+    image: projectAiSupport,
+    tech: ["React", "Python", "OpenAI API", "FastAPI"],
+    demoUrl: "#",
+  },
+  {
+    title: "Telemedicine Clinic Hub",
+    desc: "Appointment scheduling, virtual video calls, electronic health records (EHR) compliance, and prescriptions.",
+    image: projectTelemedicine,
+    tech: ["Next.js", "WebRTC", "Node.js", "PostgreSQL"],
+    demoUrl: "#",
+  },
+  {
+    title: "Smart Logistics Tracker",
+    desc: "Real-time fleet tracking, geofencing alerts, route optimization engine, and delivery dispatch dashboard.",
+    image: projectLogistics,
+    tech: ["React", "TypeScript", "Google Maps", "NestJS"],
+    demoUrl: "#",
+  },
+  {
+    title: "AI Analytics Dashboard",
+    desc: "Interactive analytics dashboard with AI-driven insights and custom visualizations.",
+    image: projectAiSupport,
+    tech: ["React", "D3.js", "Python", "FastAPI"],
+    demoUrl: "#",
+  },
+  {
+    title: "IoT Monitoring Platform",
+    desc: "Scalable platform for monitoring and managing IoT devices in real-time.",
+    image: projectTelemedicine,
+    tech: ["Node.js", "WebSockets", "MongoDB", "AWS IoT"],
+    demoUrl: "#",
+  },
+  {
+    title: "Blockchain Payment Gateway",
+    desc: "Secure payment gateway leveraging blockchain for transparent transactions.",
+    image: projectSaas,
+    tech: ["Solidity", "Web3.js", "Ethereum", "Node.js"],
+    demoUrl: "#",
   },
 ];
 
@@ -137,9 +189,9 @@ export const testimonials = [
 ];
 
 export const stats = [
-  { value: "120+", label: "Projects Delivered" },
-  { value: "40+", label: "Clients Worldwide" },
-  { value: "8+", label: "Years of Experience" },
+  { value: "15+", label: "Projects Delivered" },
+  { value: "9+", label: "Clients Worldwide" },
+  { value: "4+", label: "Years of Experience" },
   { value: "99.9%", label: "Uptime Delivered" },
 ];
 

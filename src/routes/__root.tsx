@@ -9,7 +9,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { AnimatedBackground } from "../components/AnimatedBackground";
@@ -37,7 +36,7 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    console.error(error);
   }, [error]);
 
   return (
@@ -90,11 +89,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Zylos Tech — Software Engineering Company in Ethiopia" },
-      { name: "twitter:description", content: "Zylos Elevate is a premium website showcasing Zylos Tech's software engineering services for global clients." },
-      { name: "description", content: "Zylos Elevate is a premium website showcasing Zylos Tech's software engineering services for global clients." },
-      { property: "og:description", content: "Zylos Elevate is a premium website showcasing Zylos Tech's software engineering services for global clients." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/077fa29c-a273-4568-9008-eeb0eac6a2e0/id-preview-8008e03a--2d3f0d77-cc17-40a5-99b1-97f5730a8d6b.lovable.app-1780552786817.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/077fa29c-a273-4568-9008-eeb0eac6a2e0/id-preview-8008e03a--2d3f0d77-cc17-40a5-99b1-97f5730a8d6b.lovable.app-1780552786817.png" },
+      { name: "twitter:description", content: "High-performance websites, enterprise systems, and scalable SaaS, engineered in Ethiopia for the world." },
+      { name: "description", content: "High-performance websites, enterprise systems, and scalable SaaS, engineered in Ethiopia for the world." },
+      { property: "og:description", content: "High-performance websites, enterprise systems, and scalable SaaS, engineered in Ethiopia for the world." },
+      { property: "og:image", content: "https://zylos-tech.com/og-image.png" },
+      { name: "twitter:image", content: "https://zylos-tech.com/og-image.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -102,6 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
       },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
     ],
     scripts: [
       {
@@ -134,6 +134,22 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="dark">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const savedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+                if (theme === 'light') {
+                  document.documentElement.classList.remove('dark');
+                } else {
+                  document.documentElement.classList.add('dark');
+                }
+              })();
+            `,
+          }}
+        />
         <HeadContent />
       </head>
       <body>

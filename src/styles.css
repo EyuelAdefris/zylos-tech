@@ -35,7 +35,37 @@
 
 :root {
   --radius: 0.75rem;
-  /* Dark by default — brand colors */
+  /* Light mode colors */
+  --background: oklch(0.99 0.005 250);          /* Very light gray-blue background */
+  --foreground: oklch(0.18 0.03 260);           /* Deep navy text */
+  --card: oklch(1 0 0);                         /* Pure white cards */
+  --card-foreground: oklch(0.18 0.03 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.03 260);
+  --primary: oklch(0.58 0.21 260);              /* Brand electric blue */
+  --primary-foreground: oklch(0.99 0.005 250);  /* White text on primary buttons */
+  --primary-glow: oklch(0.48 0.18 260);         /* Darker electric blue for light mode contrast */
+  --secondary: oklch(0.94 0.015 250);           /* Light gray-blue secondary actions */
+  --secondary-foreground: oklch(0.18 0.03 260);
+  --muted: oklch(0.96 0.01 250);
+  --muted-foreground: oklch(0.45 0.02 250);
+  --accent: oklch(0.92 0.025 250);
+  --accent-foreground: oklch(0.18 0.03 260);
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(0.99 0.005 250);
+  --border: oklch(0.2 0.03 260 / 8%);
+  --input: oklch(0.2 0.03 260 / 12%);
+  --ring: oklch(0.58 0.21 260 / 40%);
+
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, oklch(0.7 0.15 250) 100%);
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, color-mix(in oklab, var(--primary) 12%, transparent) 0%, transparent 70%);
+  --gradient-card: linear-gradient(180deg, color-mix(in oklab, var(--primary) 2%, var(--card)) 0%, var(--card) 100%);
+  --shadow-glow: 0 20px 60px -20px color-mix(in oklab, var(--primary) 30%, transparent);
+  --shadow-card: 0 8px 30px -10px oklch(0.2 0.03 260 / 8%);
+}
+
+.dark {
+  /* Dark mode colors */
   --background: oklch(0.17 0.04 260);            /* #0B1320 deep navy */
   --foreground: oklch(0.97 0.01 250);
   --card: oklch(0.21 0.04 260);
@@ -63,6 +93,7 @@
   --shadow-glow: 0 20px 60px -20px color-mix(in oklab, var(--primary) 60%, transparent);
   --shadow-card: 0 8px 30px -10px oklch(0 0 0 / 0.5);
 }
+
 
 @layer base {
   * {
