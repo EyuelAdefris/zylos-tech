@@ -82,15 +82,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#0B1320" },
       { property: "og:site_name", content: "Zylos Tech" },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Zylos Tech — Software Engineering Company" },
+      { property: "og:title", content: "Zylos Tech — Software Engineering Company in Ethiopia" },
       {
         property: "og:description",
         content:
           "High-performance websites, enterprise systems, and scalable SaaS, engineered in Ethiopia for the world.",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Zylos Tech" },
-      { name: "twitter:description", content: "Software engineering company building powerful solutions for international clients." },
+      { name: "twitter:title", content: "Zylos Tech — Software Engineering Company in Ethiopia" },
+      { name: "twitter:description", content: "Zylos Elevate is a premium website showcasing Zylos Tech's software engineering services for global clients." },
+      { name: "description", content: "Zylos Elevate is a premium website showcasing Zylos Tech's software engineering services for global clients." },
+      { property: "og:description", content: "Zylos Elevate is a premium website showcasing Zylos Tech's software engineering services for global clients." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
