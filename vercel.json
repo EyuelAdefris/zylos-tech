@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "functions": {
-    "src/routes/api/**/*.ts": {
-      "runtime": "nodejs18.x"
-    }
-  },
+  "outputDirectory": "dist",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  ],
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs18.x"
+    }
+  }
 }
