@@ -93,6 +93,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: "Zylos Elevate is a premium website showcasing Zylos Tech's software engineering services for global clients." },
       { name: "description", content: "Zylos Elevate is a premium website showcasing Zylos Tech's software engineering services for global clients." },
       { property: "og:description", content: "Zylos Elevate is a premium website showcasing Zylos Tech's software engineering services for global clients." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/077fa29c-a273-4568-9008-eeb0eac6a2e0/id-preview-8008e03a--2d3f0d77-cc17-40a5-99b1-97f5730a8d6b.lovable.app-1780552786817.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/077fa29c-a273-4568-9008-eeb0eac6a2e0/id-preview-8008e03a--2d3f0d77-cc17-40a5-99b1-97f5730a8d6b.lovable.app-1780552786817.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
