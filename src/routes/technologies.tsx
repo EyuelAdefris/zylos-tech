@@ -1,30 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/SectionHeading";
 import { stagger, staggerItem } from "@/components/Reveal";
 import { techStack } from "@/lib/site-data";
 import * as Icons from "lucide-react";
 
-export const Route = createFileRoute("/technologies")({
-  head: () => ({
-    meta: [
-      { title: "Technologies — Zylos Tech" },
-      {
-        name: "description",
-        content:
-          "Our modern stack: React, Next.js, TypeScript, Node.js, NestJS, PostgreSQL, MongoDB, AWS, Vercel, and Docker.",
-      },
-      { property: "og:title", content: "Technologies — Zylos Tech" },
-      { property: "og:description", content: "The modern, battle‑tested stack we ship production software with." },
-      { property: "og:url", content: "/technologies" },
-    ],
-    links: [{ rel: "canonical", href: "/technologies" }],
-  }),
-  component: TechPage,
-});
-
 function TechPage() {
-  // Helper to pick the correct icon component for a tech group
   const getIcon = (group: string) => {
     switch (group) {
       case "Frontend":

@@ -1,17 +1,10 @@
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  tanstackStart: {
-    server: { entry: "server" }
+  plugins: [react()],
+  build: {
+    outDir: 'dist',
   },
-  vite: {
-    build: {
-      // Output directory compatible with Vercel Build Output API
-      outDir: ".vercel/output/static",
-      emptyOutDir: false
-    }
-  },
-  // Enable Nitro (configured in nitro.config.ts)
-  nitro: true,
 });
 
